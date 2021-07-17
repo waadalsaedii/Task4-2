@@ -1,0 +1,283 @@
+{
+  "intents": [
+    {
+      "intent": "about_Robot",
+      "examples": [
+        {
+          "text": "What is the idea of this robot?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "company_information",
+      "examples": [
+        {
+          "text": "I want to know some information about the company"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Company_name",
+      "examples": [
+        {
+          "text": "What is the company producing this robot?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "contact",
+      "examples": [
+        {
+          "text": "I loved this company and would like to work for it, how can I communicate?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "message",
+      "examples": [
+        {
+          "text": "Does she have a message?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Q1",
+      "examples": [
+        {
+          "text": "Can I ask some questions ?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "vision",
+      "examples": [
+        {
+          "text": "What is the vision of this company?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "welcome",
+      "examples": [
+        {
+          "text": "hello"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "welcome"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Robot_company",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Smart Method "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Company_name",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1624953044071",
+      "previous_sibling": "node_3_1624951757365"
+    },
+    {
+      "type": "standard",
+      "title": "vision",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "To be the first representative in the Kingdom of Saudi Arabia for the manufacture of robotics, artificial intelligence, control systems and automation "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#vision",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1624955464456",
+      "previous_sibling": "node_3_1624953322642"
+    },
+    {
+      "type": "standard",
+      "title": "Robot_work _answer ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "It's a robot to fencing with another robot ."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#about_Robot",
+      "dialog_node": "node_3_1624951757365",
+      "previous_sibling": "node_7_1624954319306"
+    },
+    {
+      "type": "standard",
+      "title": "Robot_date_answer",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "A national commercial enterprise established in 2010 AD registered with the Ministry of Commerce and specialized in automated equipment, robotics and artificial intelligence. It is considered the first commercial facility of its kind in the service of researchers and innovators in the Arab world and is classified by Forbes magazine as one of the most innovative companies in the Kingdom of Saudi Arabia in the last classification of 2015. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#company_information",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_3_1624953322642",
+      "previous_sibling": "node_1_1624953044071"
+    },
+    {
+      "type": "standard",
+      "title": "message ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yes, its mission is to transform the technology generation from users to producers and developers. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#message",
+      "dialog_node": "node_4_1624955547981",
+      "previous_sibling": "node_2_1624955464456"
+    },
+    {
+      "type": "standard",
+      "title": "contact",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You are most welcome, you can contact this email for employment: job@s-m.com.sa "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#contact",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_4_1624955634141",
+      "previous_sibling": "node_4_1624955547981"
+    },
+    {
+      "type": "standard",
+      "title": "Q1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yes, what is your questions? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Q1",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_7_1624954319306",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello, how can I help you ?"
+              },
+              {
+                "text": "Hello , How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "chat_bot",
+  "language": "en",
+  "description": ""
+}
